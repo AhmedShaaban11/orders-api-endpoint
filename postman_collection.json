@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "fcc494b0-713c-45a8-8192-7b39f52fe95a",
+		"name": "20210032_postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31851136"
+	},
+	"item": [
+		{
+			"name": "list all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Gamal\",\r\n    \"password\": \"1234\",\r\n    \"balance\": 6000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customers/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"register"
+					],
+					"query": [
+						{
+							"key": "usernameA",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Gamal\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customers/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list simple orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders/simple",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list compound orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders/compound",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"compound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add simple order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"location\": \"Giza\",\r\n    \"productQuantityDTOS\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": 2,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/simple",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add compound order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderDTOS\": [\r\n        {\r\n            \"customerId\": 1,\r\n            \"location\": \"Giza\",\r\n            \"productQuantityDTOS\": [\r\n                {\r\n                    \"productId\": 3,\r\n                    \"quantity\": 1\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"customerId\": 1,\r\n            \"location\": \"Bolak\",\r\n            \"productQuantityDTOS\": [\r\n                {\r\n                    \"productId\": 1,\r\n                    \"quantity\": 1\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/compound",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"compound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ship simple order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/shipping/simple",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipping",
+						"simple"
+					]
+				},
+				"description": "\nThis endpoint is used to initiate a simple shipping process via an HTTP POST request to localhost:8080/shipping/simple. The request payload should include the \"orderId\" parameter. Upon a successful execution, the response will return a status code of 400 along with a JSON object containing the \"timestamp\", \"status\", \"error\", and \"path\" fields.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "ship compound order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/shipping/compound",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipping",
+						"compound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list notifications queue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/notifications",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
