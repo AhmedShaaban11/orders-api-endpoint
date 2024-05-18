@@ -1,4 +1,4 @@
-# Orders Api Endpoint
+# Orders API Endpoint
 ## Description
 This project is a component of a larger software system, specifically focusing on the "Orders and Notifications Management" module. The purpose of this module is to handle online purchase orders and manage message notifications based on various actions taken during the order process.
 ## Note
